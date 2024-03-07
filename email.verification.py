@@ -15,7 +15,7 @@ def Wrong_Email_Errors(error_number):
               "Which is not valid.")
     elif error_number == 4:
         print("Error number:4\n"
-              "Which means that your email address doesn't contains \".com\"\n"
+              "Which means that your email address doesn't contains \".com\" or it contains a \"space\" at the end of the email \n"
               "Which is not valid.")
     elif error_number == 5:
         print("Error number:5\n"
@@ -24,7 +24,7 @@ def Wrong_Email_Errors(error_number):
     return ""
 
 
-d, k, j = 0, 0, 0
+invalid_symbols, space, j = 0, 0, 0
 email = input("Only \".com\" top-level domain is allowed to enter.\nEnter your Email:\n")
 """the minimum length of an email address is 6 characters
 for exaple:g@g.in"""
@@ -34,7 +34,7 @@ if len(email) >= 6:
             if (email[-4] == ".") ^ (email[-3] == "."):
                 for i in email:
                     if i.isspace() == True:
-                        k = 1
+                        space = 1
                     elif i.isalpha():
                         if i == i.upper():
                             j = 1
@@ -43,8 +43,8 @@ if len(email) >= 6:
                     elif i == "_" or i == "." or i == "@":
                         continue
                     else:
-                        d = 1
-                if k == 1 or j == 1 or d == 1:
+                        invalid_symbols = 1
+                if invalid_symbols == 1 or j == 1 or space == 1:
                  print(Wrong_Email_Errors(error_number=5))
                 else:
                     print("Right Email!")
