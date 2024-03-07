@@ -1,27 +1,40 @@
 def Wrong_Email_Errors(error_number):
+
     print("Email incorrect!\nError number:", error_number)
-    int(input("Enter 1 for error detail and enter 0 to exit the email checking:"))
-    if error_number == 1:
-        print("Error number:1\n"
-              "Which means that your email address is smaller than the minimum email syntax\n"
-              "Which is not valid.")
-    elif error_number == 2:
-        print("Error number:2\n"
-              "Which means that your email address' first letter is a non-alphabatic or it is a space\n"
-              "Which is not valid.")
-    elif error_number == 3:
-        print("Error number:3\n"
-              "Which means that your email address contains zero, two or more \"@\" signs.\n"
-              "Which is not valid.")
-    elif error_number == 4:
-        print("Error number:4\n"
-              "Which means that your email address doesn't contains \".com\" or it contains a \"space\" at the end of the email \n"
-              "Which is not valid.")
-    elif error_number == 5:
-        print("Error number:5\n"
-              "Which means that your email address contains a space or it contains a capital alphabate.\n"
-              "Which is not valid.")
-    return ""
+    while True:
+        code=int(input("Enter 1 for error detail and enter 0 to exit the email checking:"))
+        if code == 1:
+
+                if error_number == 1:
+                    return ("Error number:1\n"
+                          "Which means that your email address is smaller than the minimum email syntax\n"
+                          "Which is not valid.")
+                    break
+                elif error_number == 2:
+                    return ("Error number:2\n"
+                          "Which means that your email address' first letter is a non-alphabatic or it is a space\n"
+                          "Which is not valid.")
+                    break
+                elif error_number == 3:
+                    return ("Error number:3\n"
+                          "Which means that your email address contains zero, two or more \"@\" signs.\n"
+                          "Which is not valid.")
+                    break
+                elif error_number == 4:
+                    return ("Error number:4\n"
+                          "Which means that your email address doesn't contains \".com\" or it contains a \"space\" at the end of the email \n"
+                          "Which is not valid.")
+                    break
+                elif error_number == 5:
+                    return ("Error number:5\n"
+                          "Which means that your email address contains a space or it contains a capital alphabate.\n"
+                          "Which is not valid.")
+                    break
+        elif code ==0:
+            return ("Good bye")
+            break
+        else:
+            continue
 
 
 invalid_symbols, space, j = 0, 0, 0
