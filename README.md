@@ -1,16 +1,86 @@
-# Email_Validation_program
-## Features
+# 📧 Email Validation Program
 
-This E-mail validation program can perform the following functionalities:
+[![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-1. Detect that the first letter of the email is alphabetic or non-alphabetic.
-2. It will count the number of "@" signs in your entered email because a valid email can't contain more than one or zero "@" signs.
-3. It will check that the email contains a ".com" top-level domain(you can add more top-level domains but here  I added only ".com" and ".in"). 
-4. it will also check that the entered email should only contain either ".com" or ".in" top-level domain(note: you can enter more top-level-domain).
-5. Also it will make sure not to consider an email right that contains a "space", "_" or a "." (Except in top-level domains like ".com").
-6. And if any condition described above is proven false then the program will give a valid error with a specific error code.
-7. Moreover, the program will ask to input "1" or "0" if there is any error. If the user inputs "1" then the program will give a proper reason because of which our email is proven wrong 
-and if the user inputs "0" then it will exit the program.
+A simple yet effective Python program that checks whether an email is valid based on multiple conditions including syntax, characters, and domain rules. It gives specific error codes and reasons for invalid inputs, helping users understand what went wrong.
 
-## Requirements To Run The Code:
-1. Anything that can run Python code can run this program. Because it contains no External libraries.
+## ✅ Features
+
+This email validation program can perform the following validations:
+
+1. Detects if the **first letter** of the email is alphabetic.
+2. Counts the number of **@** signs – ensures there’s exactly one.
+3. Checks for allowed **top-level domains**: `.com` and `.in`. *(More can be added manually.)*
+4. Ensures only `.com` or `.in` are used as domains.
+5. Disallows emails that contain:
+   - Spaces
+   - Underscores (`_`)
+   - Extra dots (`.` not in domain)
+   - Capital letters
+6. Provides **specific error messages with error codes** when invalid.
+7. Asks the user to input:
+   - `1` to get a detailed reason for the invalid email
+   - `0` to exit the program
+
+## 🛠️ Technologies Used
+
+- **Python** – Core programming logic
+- **No external libraries** – Simple input, conditionals, and string functions
+
+## 📋 Validation Criteria
+
+### ✅ Valid Email Conditions
+
+- Minimum **6 characters** long  
+- Starts with a **letter**  
+- Contains exactly **1 '@'**  
+- Ends with **'.com'** or **'.in'**  
+- Contains only **lowercase alphabets, numbers, and allowed symbols** (`@`, `.`, no spaces or uppercase)  
+
+### ❌ Invalid Email Triggers
+
+Each invalid case is linked to a specific error number:
+- `Error 1` – Too short
+- `Error 2` – First character not a letter
+- `Error 3` – Zero or multiple `@`
+- `Error 4` – Missing domain or space at the end
+- `Error 5` – Contains space, capital letters, or invalid characters
+
+## 🧠 Lessons Learned
+
+1. Used character-by-character inspection for email input
+2. Applied conditions with logical operators and flags
+3. Integrated user-driven error feedback
+4. Gained better understanding of valid email syntax rules
+
+## 🧪 Example
+
+```bash
+Enter your Email:
+> g@g.com
+
+Right Email!
+Enter your Email:
+> 9g@.com
+
+Email incorrect!
+Error number: 2
+Enter 1 for error detail and enter 0 to exit the email checking:
+> 1
+
+Error number:2
+Which means that your email address' first letter is a non-alphabatic or it is a space
+Which is not valid.
+```
+
+
+## 🚀 How to Run
+```
+# Save the code in a file called email_validator.py and run it using:
+python email_validator.py
+```
+
+## 📄 License
+This project is licensed under the MIT License.
+See the LICENSE file for full details.
